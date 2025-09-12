@@ -197,7 +197,7 @@ const StatusCheck = () => {
 
                     {result.status === "pending" && (
                       <div className="mt-6 p-4 bg-warning/10 rounded-lg border border-warning/20">
-                        <p className="text-warning-foreground text-sm font-medium">
+                        <p className="text-foreground text-sm font-medium">
                           ⏳ Your application is under review. You will receive an SMS notification once processed.
                         </p>
                       </div>
