@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fundify Design System - Trust, Transparency, Hope */
+
+@layer base {
+  :root {
+    /* Base colors */
+    --background: 0 0% 100%;
+    --foreground: 210 16% 18%;
+
+    /* Trust Blue - Primary brand color */
+    --primary: 212 88% 42%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 212 88% 92%;
+    --primary-dark: 212 88% 32%;
+
+    /* Hope Green - Secondary brand color */
+    --secondary: 142 76% 36%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 142 76% 92%;
+
+    /* Status colors for transparency */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --warning: 42 85% 35%;
+    --warning-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Neutral system */
+    --card: 0 0% 100%;
+    --card-foreground: 210 16% 18%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 16% 18%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 210 16% 46%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 210 16% 18%;
+    --border: 210 32% 91%;
+    --input: 210 32% 91%;
+    --ring: 212 88% 42%;
+
+    /* Gradients for trust and hope */
+    --gradient-hero: linear-gradient(135deg, hsl(212 88% 42%), hsl(142 76% 36%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 40% 98%));
+    --gradient-status: linear-gradient(90deg, hsl(212 88% 92%), hsl(142 76% 92%));
+
+    /* Shadows for depth and trust */
+    --shadow-card: 0 4px 6px -1px hsl(210 16% 18% / 0.1), 0 2px 4px -1px hsl(210 16% 18% / 0.06);
+    --shadow-elevated: 0 10px 15px -3px hsl(210 16% 18% / 0.1), 0 4px 6px -2px hsl(210 16% 18% / 0.05);
+    --shadow-glow: 0 0 0 1px hsl(212 88% 42% / 0.2);
+
+    /* Border radius for modern feel */
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark theme maintains trust but with darker backgrounds */
+    --background: 210 16% 8%;
+    --foreground: 0 0% 95%;
+    
+    --primary: 212 88% 52%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 212 88% 15%;
+    --primary-dark: 212 88% 42%;
+    
+    --secondary: 142 76% 46%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 142 76% 15%;
+    
+    --card: 210 16% 12%;
+    --card-foreground: 0 0% 95%;
+    --popover: 210 16% 12%;
+    --popover-foreground: 0 0% 95%;
+    
+    --muted: 210 16% 16%;
+    --muted-foreground: 210 16% 70%;
+    --accent: 210 16% 16%;
+    --accent-foreground: 0 0% 95%;
+    
+    --border: 210 16% 20%;
+    --input: 210 16% 20%;
+    --ring: 212 88% 52%;
+    
+    /* Dark gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(212 88% 52%), hsl(142 76% 46%));
+    --gradient-card: linear-gradient(145deg, hsl(210 16% 12%), hsl(210 16% 16%));
+    --gradient-status: linear-gradient(90deg, hsl(212 88% 15%), hsl(142 76% 15%));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  /* Hero section utilities */
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .bg-gradient-status {
+    background: var(--gradient-status);
+  }
+  
+  /* Custom shadows */
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  /* Status indicator utilities */
+  .status-approved {
+    @apply bg-success text-success-foreground;
+  }
+  
+  .status-pending {
+    @apply bg-warning text-warning-foreground;
+  }
+  
+  .status-rejected {
+    @apply bg-destructive text-destructive-foreground;
+  }
+}
